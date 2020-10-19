@@ -1,5 +1,4 @@
-automating the cluster provisioning with terraform to replace their suggestion to do it thru the GUI
-  continue with Step 3 — Creating a Service Account
+save as reference
   https://www.digitalocean.com/community/tutorials/how-to-automate-deployments-to-digitalocean-kubernetes-with-circleci
 
 
@@ -10,3 +9,14 @@ script / cheatsheet for infra configs
 DO terraform walk thru:
   https://www.digitalocean.com/community/tutorials/how-to-use-terraform-with-digitalocean
 
+
+
+
+TODO:
+run the following:
+step 6:
+  kubectl apply -f ~/kube/
+  kubectl port-forward $(kubectl get pod --selector="app=gamsa" --output jsonpath='{.items[0].metadata.name}') 8080:80
+  curl localhost:8080
+    NOTE: this is now being served remotely on DO but request outputs are
+    being output locally
