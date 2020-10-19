@@ -1,0 +1,24 @@
+# pod configs
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gamsa
+  namespace: default
+  labels:
+    app: gamsa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gamsa
+  template:
+    metadata:
+      labels:
+        app: gamsa
+    spec:
+      containers:
+        - name: gamsa
+          image: eternal44/gamsa:latest
+          ports:
+            - containerPort: 80
+              name: http
