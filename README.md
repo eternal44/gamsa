@@ -20,3 +20,4 @@ step 6:
   curl localhost:8080
     NOTE: this is now being served remotely on DO but request outputs are
     being output locally
+
